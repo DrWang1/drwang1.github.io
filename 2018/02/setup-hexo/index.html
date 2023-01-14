@@ -261,12 +261,21 @@
 <blockquote>
 <p>如果还没有配置过git 的用户信息，在命令行里执行如下命令（引号里分别是你的名字和邮箱，已经配置的跳过）：<br><code>git config --global user.name &quot;John Doe&quot;</code><br><code>git config --global user.email &quot;johndoe@example.com&quot;</code></p>
 </blockquote>
-<p>接着打开站点配置文件，修改如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+<p>由于GitHub 不再支持命令行HTTPS 方式鉴权，所以改用SSH 方式上传站点。<br>首先执行以下命令生成公钥（如果已有则跳过此步骤）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “youremail”</span><br></pre></td></tr></table></figure>
 
-<p>最后，在命令行执行如下命令（首次发布会要求输入Github的账户和密码），就可以发布到Github啦。</p>
+<p>然后一路回车到底完成配置rsa私钥。</p>
+<p>接着打开生成的SSH key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim path/to/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>复制里面的全部内容，并添加到GitHub Account - Settings - SSH and GPG keys - New SSH key。</p>
+<p>接着打开站点配置文件，修改如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+
+<p>然后，在命令行执行如下命令（首次发布会要求输入Github的账户和密码），就可以发布到GitHub啦。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
 
+<p>最后，在GitHub repo - Settings - Pages - Build and deployment 中，选择上传的分支即可。</p>
 <p>快打开<code>https://username.github.io/</code> ，看看你的新博客吧~</p>
 <p>Happy blogging❤️</p>
 
