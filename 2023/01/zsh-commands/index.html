@@ -46,17 +46,22 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://drwang1.github.io/categories/index.html">
+  <meta name="description" content="记录常用的zsh 命令。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zsh常用命令">
+<meta property="og:url" content="https://drwang1.github.io/2023/01/zsh-commands/index.html">
 <meta property="og:site_name" content="DrWang&#39;s Notes">
+<meta property="og:description" content="记录常用的zsh 命令。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-10-30T03:02:56.000Z">
-<meta property="article:modified_time" content="2019-10-30T03:03:46.000Z">
+<meta property="og:image" content="https://drwang1.github.io/2023/01/zsh-commands/zsh-custom-prompt.png">
+<meta property="article:published_time" content="2023-01-17T17:53:26.000Z">
+<meta property="article:modified_time" content="2023-01-17T18:19:44.496Z">
 <meta property="article:author" content="DrWang">
+<meta property="article:tag" content="zsh">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://drwang1.github.io/2023/01/zsh-commands/zsh-custom-prompt.png">
 
-<link rel="canonical" href="https://drwang1.github.io/categories/">
+<link rel="canonical" href="https://drwang1.github.io/2023/01/zsh-commands/">
 
 
 <script id="page-configurations">
@@ -64,12 +69,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>categories | DrWang's Notes
-  </title>
+  <title>zsh常用命令 | DrWang's Notes</title>
   
 
 
@@ -170,52 +174,95 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://drwang1.github.io/2023/01/zsh-commands/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DrWang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DrWang's Notes">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          zsh常用命令
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2023-01-18 01:53:26 / 修改时间：02:19:44" itemprop="dateCreated datePublished" datetime="2023-01-18T01:53:26+08:00">2023-01-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>记录常用的zsh 命令。</p>
+<span id="more"></span>
+
+<h4 id="自定义提示"><a href="#自定义提示" class="headerlink" title="自定义提示"></a>自定义提示</h4><p>在<code>~.zshrc</code>文件中添加PROMPT配置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果文件不存在，则先创建文件</span></span><br><span class="line"><span class="built_in">touch</span> .zshrc</span><br><span class="line"><span class="comment"># 如果文件已经存在，则直接编辑</span></span><br><span class="line">vim .zshrc</span><br></pre></td></tr></table></figure>
+
+<p>添加如下配置（<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dcf39bc7821a">来源</a>）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PROMPT=&#x27;%F&#123;13&#125;%~ %F&#123;50&#125;%B%# %f%b&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><code>:wq</code>保存后，执行<code>source .zshrc</code>使配置在所有zsh shell窗口生效。</p>
+<img src="https://images.weserv.nl/?url=https%3A%2F%2Fdrwang1.github.io%2F2023%2F01%2Fzsh-commands%2Fzsh-custom-prompt.png&default=https%3A%2F%2Fdrwang1.github.io%2F2023%2F01%2Fzsh-commands%2Fzsh-custom-prompt.png" class="">
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/zsh/" rel="tag"># zsh</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/python-odps/" rel="prev" title="pyODPS 用法">
+      <i class="fa fa-chevron-left"></i> pyODPS 用法
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              暂无分类
-            </div>
-            <div class="category-all">
-              
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -267,6 +314,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">自定义提示</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
